@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from webapp.views import index_view, memo_view, memo_create_view, memo_delete_view, memo_update_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index_view, name='index'),
+    path('memo/<int:pk>/', memo_view, name='memo_view'),
+    path('memo/add/', memo_create_view, name='memo_create'),
+    path('memo/<int:pk>/update/', memo_update_view, name='memo_update'),
+    path('memo/<int:pk>/delete/', memo_delete_view, name='memo_delete')
 ]

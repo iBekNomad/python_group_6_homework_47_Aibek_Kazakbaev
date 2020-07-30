@@ -1,3 +1,6 @@
 from django.contrib import admin
+from webapp.models import QuickMemo
 
-# Register your models here.
+
+admin.site.register(QuickMemo)
+

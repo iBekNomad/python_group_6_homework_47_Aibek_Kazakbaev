@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete{% endblock %}
+
+{% block menu %}
+    <li><a href="{% url 'memo_view' memo.pk %}">Cancel</a></li>
+{% endblock %}
+
+{% block content %}
+    <h2>Are you sure to delete article "{{ memo.description }}"?</h2>
+    <p>Date: {{ memo.execution_date }}</p>
+    <form action="{% url 'memo_delete' memo.pk %}" method="post">
+        {% csrf_token %}
+        <p><input type="submit" value="yes" class="btn btn-sm btn-info"></p>
+        <p><a href="{% url "memo_view" memo.pk%}" class="btn btn-sm btn-info">No</a> </p>
+    </form>
+    <p></p>
+    <h3>Detailed description:</h3>
+    <p>{{ memo.text }}</p>
+{% endblock %}
