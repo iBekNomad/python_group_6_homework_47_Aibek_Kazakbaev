@@ -1,5 +1,10 @@
 body {
     margin-top: 60px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.amatic-text{
+    font-family: 'Amatic SC', cursive;
 }
 
 .navbar {

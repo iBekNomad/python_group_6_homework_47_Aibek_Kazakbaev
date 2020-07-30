@@ -3,10 +3,11 @@
 {% block title %}Create{% endblock %}
 
 {% block content %}
-    <h1>Create Quick Memo</h1>
+    <h1 class="text-info">Create Quick Memo</h1>
 
     {% url 'memo_create' as action_url %}
     {% include 'partial/form.html' with action_url=action_url form_method='post' %}
+    <br/>
 
 {% endblock %}
 

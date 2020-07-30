@@ -3,12 +3,12 @@
 {% block title %}Main{% endblock %}
 
 {% block content %}
-    <h1 class="text-secondary text-uppercase font-weight-light">To do list</h1>
+    <h1 class="text-uppercase text-info amatic-text">To do list</h1>
     <div class="row row-cols-1 row-cols-md-3">
         {% for memo in memos %}
             <div class="col mb-4">
                 <div class="card border-info mb-3" style="max-width: 18rem;">
-                    <div class="card-header bg-info border-info a-text"><a class="text-light text-uppercase"
+                    <div class="card-header border-info a-text"><a class="text-success text-uppercase text-decoration-none"
                             href="{% url "memo_view" memo.pk %}">{{ memo.description }}</a>
                     </div>
                     <div class="card-body text-success">
@@ -16,9 +16,11 @@
                         <p class="card-text">{{ memo.text }}</p>
                     </div>
                     <div class="card-footer bg-transparent border-info">
-                        {{ memo.execution_date|date:"d.m.Y" }}
-                        <p><a href="{% url "memo_update" memo.pk %}" class="btn btn-sm btn-info">Update</a></p>
-                        <p><a href="{% url "memo_delete" memo.pk %}" class="btn btn-sm btn-info">Delete</a></p>
+                        <p class="text-secondary">Execution date: {{ memo.execution_date|date:"d.m.Y" }}</p>
+                        <div class="d-flex justify-content-around">
+                            <p><a href="{% url "memo_update" memo.pk %}" class="btn btn-sm btn-info">Update</a></p>
+                            <p><a href="{% url "memo_delete" memo.pk %}" class="btn btn-sm btn-info">Delete</a></p>
+                        </div>
                     </div>
                 </div>
             </div>

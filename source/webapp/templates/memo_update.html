@@ -3,14 +3,15 @@
 {% block title %}Update{% endblock %}
 
 {% block menu %}
-    <li><a href="{% url 'memo_view' memo.pk %}">Cancel</a></li>
+    <li><a href="{% url 'memo_view' memo.pk %}" class="text-uppercase">Cancel</a></li>
 {% endblock %}
 
 {% block content %}
-    <h1>Update Memo</h1>
+    <h1 class="text-info">Update Memo</h1>
 
     {% url 'memo_update' as action_url %}
     {% include 'partial/form.html' with action_url=action_url form_method='post' button_text='Update' %}
+    <br/>
 
 {% endblock %}
 
